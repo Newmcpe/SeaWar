@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_morskoiboi" default="compile.module.morskoiboi">
+  <dirname property="module.morskoiboi.basedir" file="${ant.file.module_morskoiboi}"/>
+  
+  <property name="module.jdk.home.morskoiboi" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.morskoiboi" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.morskoiboi" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.morskoiboi" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="morskoiboi.output.dir" value="${module.morskoiboi.basedir}/out/production/MorskoiBoi"/>
+  <property name="morskoiboi.testoutput.dir" value="${module.morskoiboi.basedir}/out/test/MorskoiBoi"/>
+  
+  <path id="morskoiboi.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="morskoiboi.module.production.classpath">
+    <path refid="${module.jdk.classpath.morskoiboi}"/>
+    <path refid="library.spigot-1.9.4-r0.1-snapshot.classpath"/>
+  </path>
+  
+  <path id="morskoiboi.runtime.production.module.classpath">
+    <pathelement location="${morskoiboi.output.dir}"/>
+    <path refid="library.spigot-1.9.4-r0.1-snapshot.classpath"/>
+  </path>
+  
+  <path id="morskoiboi.module.classpath">
+    <path refid="${module.jdk.classpath.morskoiboi}"/>
+    <pathelement location="${morskoiboi.output.dir}"/>
+    <path refid="library.spigot-1.9.4-r0.1-snapshot.classpath"/>
+  </path>
+  
+  <path id="morskoiboi.runtime.module.classpath">
+    <pathelement location="${morskoiboi.testoutput.dir}"/>
+    <pathelement location="${morskoiboi.output.dir}"/>
+    <path refid="library.spigot-1.9.4-r0.1-snapshot.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.morskoiboi">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.morskoiboi">
+    <patternset refid="excluded.from.module.morskoiboi"/>
+  </patternset>
+  
+  <path id="morskoiboi.module.sourcepath">
+    <dirset dir="${module.morskoiboi.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.morskoiboi" depends="compile.module.morskoiboi.production,compile.module.morskoiboi.tests" description="Compile module MorskoiBoi"/>
+  
+  <target name="compile.module.morskoiboi.production" depends="register.custom.compilers" description="Compile module MorskoiBoi; production classes">
+    <mkdir dir="${morskoiboi.output.dir}"/>
+    <javac2 destdir="${morskoiboi.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.morskoiboi}/javac">
+      <compilerarg line="${compiler.args.morskoiboi}"/>
+      <bootclasspath refid="morskoiboi.module.bootclasspath"/>
+      <classpath refid="morskoiboi.module.production.classpath"/>
+      <src refid="morskoiboi.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.morskoiboi"/>
+    </javac2>
+    
+    <copy todir="${morskoiboi.output.dir}">
+      <fileset dir="${module.morskoiboi.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.morskoiboi.tests" depends="register.custom.compilers,compile.module.morskoiboi.production" description="compile module MorskoiBoi; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.morskoiboi" description="cleanup module">
+    <delete dir="${morskoiboi.output.dir}"/>
+    <delete dir="${morskoiboi.testoutput.dir}"/>
+  </target>
+</project>

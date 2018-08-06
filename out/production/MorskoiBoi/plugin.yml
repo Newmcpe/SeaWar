@@ -1,0 +1,10 @@
+name: SeaWar
+main: com.newmcpe.morskoiboi.Main
+version: 1.0
+
+commands:
+  tpworld:
+  pidoras:
+  minigames:
+  spawn:
+  menu:
