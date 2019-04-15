@@ -9,7 +9,10 @@
     <list default="true" id="cfc19835-b7f1-4ac5-a41d-1bace979dedc" name="Default" comment="release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MorskoiBoi_jar/MorskoiBoi.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MorskoiBoi_jar/MorskoiBoi.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,8 +27,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+            <state relative-caret-position="457">
+              <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="664">
+              <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,10 +49,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+            <state relative-caret-position="434">
+              <caret line="209" column="49" lean-forward="true" selection-start-line="209" selection-start-column="49" selection-end-line="209" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,15 +61,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-441">
-              <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+            <state relative-caret-position="135">
+              <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5169#5170#0" expanded="true" />
-                <element signature="e#5203#5204#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Downloads/Paper-1.12.2-b1612.jar!/org/bukkit/craftbukkit/v1_12_R1/CraftServer.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="1101" column="19" selection-start-line="1101" selection-start-column="19" selection-end-line="1101" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -62,21 +84,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Team.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
+            <state relative-caret-position="641">
               <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#912#913#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/ItemUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -106,6 +119,8 @@
       <find>runnableid</find>
       <find>id</find>
       <find>govnoplayer</find>
+      <find>joinS</find>
+      <find>stop</find>
     </findStrings>
     <replaceStrings>
       <replace>p</replace>
@@ -122,11 +137,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/schedule/Schedule.java" />
         <option value="$PROJECT_DIR$/src/main/java/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/enums/GameState.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Team.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" />
       </list>
     </option>
   </component>
@@ -148,6 +163,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -220,7 +236,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,7 +245,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="seawar" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555310438848" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555339895305" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Paper-1.12.2-b1612.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -308,6 +323,7 @@
       <workItem from="1502889110023" duration="2000" />
       <workItem from="1555231669829" duration="21607000" />
       <workItem from="1555305907014" duration="4601000" />
+      <workItem from="1555330102657" duration="4940000" />
     </task>
     <task id="LOCAL-00001" summary="фулл рекодинг моей старой миниигры">
       <created>1555306362952</created>
@@ -341,7 +357,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26210000" />
+    <option name="totallyTimeSpent" value="31150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -367,7 +383,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32939914" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32939914" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32939914" />
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -447,16 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/schedule/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4002">
@@ -467,14 +473,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Team.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -485,29 +487,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Team.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        <state relative-caret-position="641">
+          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
+    <entry file="jar://$USER_HOME$/Downloads/Paper-1.12.2-b1612.jar!/org/bukkit/Bukkit.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-441">
-          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+        <state relative-caret-position="321">
+          <caret line="225" column="24" lean-forward="true" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5169#5170#0" expanded="true" />
-            <element signature="e#5203#5204#0" expanded="true" />
+            <element signature="e#6099#6100#0" expanded="true" />
+            <element signature="e#6143#6144#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        <state relative-caret-position="457">
+          <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/Paper-1.12.2-b1612.jar!/org/bukkit/Server.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="136" column="12" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/Paper-1.12.2-b1612.jar!/org/bukkit/craftbukkit/v1_12_R1/CraftServer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="1101" column="19" selection-start-line="1101" selection-start-column="19" selection-end-line="1101" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -516,8 +545,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+        <state relative-caret-position="664">
+          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="209" column="49" lean-forward="true" selection-start-line="209" selection-start-column="49" selection-end-line="209" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

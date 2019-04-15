@@ -61,13 +61,6 @@ public class EventListener implements Listener {
     }
 
     @EventHandler
-    public void onDeath(PlayerDeathEvent event) {
-        Main.arenas.forEach(arena -> {
-            arena.onDeath(event);
-        });
-    }
-
-    @EventHandler
     public void onDamage(EntityDamageEvent event) {
        Main.arenas.forEach(arena -> {
            arena.onDamage(event);

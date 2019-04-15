@@ -34,11 +34,12 @@ public class Main extends JavaPlugin {
     private void addArenas() {
         arenas = new ArrayList<>();
         arenas.add(new Arena("mb1"));
-        arenas.add(new Arena("mbw"));
+        arenas.add(new Arena("mb2"));
 
         arenas.forEach(arena -> {
             World world = Bukkit.getWorld(arena.getName());
             if(world != null) {
+                System.out.println("отключаю автосейв в " +world.getName());
                 world.setAutoSave(false);
             }
         });

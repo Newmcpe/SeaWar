@@ -1,6 +1,8 @@
 package com.newmcpe.morskoiboi.utils;
 
+import com.newmcpe.morskoiboi.Main;
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.entity.Player;
 
@@ -78,10 +80,23 @@ public class Utils {
 
     public static void reloadArena(String arena) {
         try {
-            Bukkit.getServer().unloadWorld(Bukkit.getWorld(arena), false);
+            Bukkit.getServer().unloadWorld(Bukkit.getServer().getWorld(arena), false);
             //Utils.delete(new File(Bukkit.getServer().getWorldContainer().getAbsolutePath() + "/" + arena));
             //Utils.copyFolder(new File(Main.instance.getDataFolder() + "/arenas/" + arena), new File(Bukkit.getServer().getWorldContainer().getAbsolutePath() + "/" + arena));
-            Bukkit.createWorld(WorldCreator.name(arena));
+            World world = Bukkit.getServer().createWorld(WorldCreator.name(arena));
+            System.out.println("loaded new world: " + world.getName());
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+    public static void loadArena(String arena) {
+        try {
+            boolean isDone = Bukkit.getServer().unloadWorld(Bukkit.getWorld(arena), false);
+            System.out.println("unload world: " + isDone);
+            //Utils.delete(new File(Bukkit.getServer().getWorldContainer().getAbsolutePath() + "/" + arena));
+            //Utils.copyFolder(new File(Main.instance.getDataFolder() + "/arenas/" + arena), new File(Bukkit.getServer().getWorldContainer().getAbsolutePath() + "/" + arena));
+            World world = Bukkit.getServer().createWorld(WorldCreator.name(arena));
+            System.out.println("loaded new world: " + world.getName());
         } catch (Throwable e) {
             e.printStackTrace();
         }
