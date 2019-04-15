@@ -9,10 +9,7 @@
     <list default="true" id="cfc19835-b7f1-4ac5-a41d-1bace979dedc" name="Default" comment="release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MorskoiBoi_jar/MorskoiBoi.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MorskoiBoi_jar/MorskoiBoi.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="209" column="49" lean-forward="true" selection-start-line="209" selection-start-column="49" selection-end-line="209" selection-end-column="49" />
+            <state relative-caret-position="204">
+              <caret line="211" column="49" lean-forward="true" selection-start-line="211" selection-start-column="49" selection-end-line="211" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -245,7 +242,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="seawar" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555339895305" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555339977038" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Paper-1.12.2-b1612.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -323,7 +320,7 @@
       <workItem from="1502889110023" duration="2000" />
       <workItem from="1555231669829" duration="21607000" />
       <workItem from="1555305907014" duration="4601000" />
-      <workItem from="1555330102657" duration="4940000" />
+      <workItem from="1555330102657" duration="5218000" />
     </task>
     <task id="LOCAL-00001" summary="фулл рекодинг моей старой миниигры">
       <created>1555306362952</created>
@@ -353,11 +350,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555310285657</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="пофиксил выгрузку мира">
+      <created>1555339920725</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555339920725</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31150000" />
+    <option name="totallyTimeSpent" value="31428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -437,7 +441,8 @@
     <MESSAGE value="фулл рекодинг моей старой миниигры" />
     <MESSAGE value="Забыл добавить в git" />
     <MESSAGE value="release" />
-    <option name="LAST_COMMIT_MESSAGE" value="release" />
+    <MESSAGE value="пофиксил выгрузку мира" />
+    <option name="LAST_COMMIT_MESSAGE" value="пофиксил выгрузку мира" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/newmcpe/morskoiboi/EventListener.java" />
@@ -555,8 +560,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="209" column="49" lean-forward="true" selection-start-line="209" selection-start-column="49" selection-end-line="209" selection-end-column="49" />
+        <state relative-caret-position="204">
+          <caret line="211" column="49" lean-forward="true" selection-start-line="211" selection-start-column="49" selection-end-line="211" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
