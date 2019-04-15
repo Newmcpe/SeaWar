@@ -7,32 +7,25 @@ import com.newmcpe.morskoiboi.schedule.Schedule;
 import com.newmcpe.morskoiboi.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitTask;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Arena {
+    private static Map<TeamType, Team> teams;
     private String name;
-    private Team redTeam;
-    private Team greenTeam;
-    private Location redTeamSpawn;
-    private Location greenTeamSpawn;
-    private int playerCount = 0;
     private ArrayList<Player> players;
-
-    private BukkitTask task;
 
     private GameState gameState = GameState.WAITING;
 
@@ -40,14 +33,13 @@ public class Arena {
         this.name = name;
 
         players = new ArrayList<>();
+        teams = new HashMap<>();
 
-        redTeam = new Team(TeamType.RED);
-        redTeamSpawn = new Location(Bukkit.getWorld(name), -44, 70, 0);
-        redTeam.setSpawn(redTeamSpawn);
+        Team redTeam = new Team(this, TeamType.RED);
+        Team greenTeam = new Team(this, TeamType.GREEN);
 
-        greenTeam = new Team(TeamType.GREEN);
-        greenTeamSpawn = new Location(Bukkit.getWorld(name), 29, 70, 0);
-        greenTeam.setSpawn(greenTeamSpawn);
+        teams.put(TeamType.RED, redTeam);
+        teams.put(TeamType.GREEN, greenTeam);
     }
 
     public static Arena getPlayerArena(Player p) {
@@ -62,28 +54,25 @@ public class Arena {
     }
 
     public static Team getPlayerTeam(Player p) {
-        for (Arena arena : Main.arenas) {
-            for (Player player : arena.greenTeam.getTeamPlayers()) {
-                if (p.getName().equalsIgnoreCase(player.getName())) {
-                    return arena.greenTeam;
-                }
-            }
-            for (Player player : arena.redTeam.getTeamPlayers()) {
-                if (p.getName().equalsIgnoreCase(player.getName())) {
-                    return arena.redTeam;
-                }
-            }
-        }
-        return null;
+        return teams
+                .entrySet()
+                .stream()
+                .filter(team -> team
+                        .getValue()
+                        .getTeamPlayers()
+                        .stream()
+                        .anyMatch(player -> p
+                                .getName()
+                                .equalsIgnoreCase(player.getName()))).findAny().get().getValue();
     }
 
     public void stop() {
         setGameState(GameState.WAITING);
 
         players.clear();
-        redTeam.getTeamPlayers().clear();
-        greenTeam.getTeamPlayers().clear();
-        playerCount = 0;
+        teams.forEach((teamType, team) -> {
+            team.getTeamPlayers().clear();
+        });
 
         Utils.reloadArena(this.name);
     }
@@ -108,17 +97,9 @@ public class Arena {
     }
 
     public void joinPlayer(Player p, TeamType teamType) {
-        playerCount++;
-        switch (teamType) {
-            case RED:
-                redTeam.addPlayer(p);
-                p.teleport(redTeamSpawn);
-                break;
-            case GREEN:
-                greenTeam.addPlayer(p);
-                p.teleport(greenTeamSpawn);
-                break;
-        }
+        Team team = this.getTeam(teamType);
+        team.addPlayer(p);
+        p.teleport(team.getSpawn());
         broadcast(p.getDisplayName() + " зашел за команду " + teamType.name());
         players.add(p);
         p.setGameMode(GameMode.ADVENTURE);
@@ -134,7 +115,7 @@ public class Arena {
         p.getInventory().addItem(new ItemStack(Material.BOAT, 1));
         p.getInventory().addItem(new ItemStack(Material.getMaterial(364), 32));
 
-        if (playerCount >= 2 && gameState == GameState.WAITING) {
+        if (players.size() >= 2 && gameState == GameState.WAITING) {
             this.start();
             broadcast("Стартую арену....");
 
@@ -142,18 +123,21 @@ public class Arena {
             players.forEach(player -> {
                 System.out.println("all playerz" + player.getDisplayName());
             });
-            greenTeam.getTeamPlayers().forEach(player -> {
+            this.getTeam(TeamType.GREEN).getTeamPlayers().forEach(player -> {
                 System.out.println("green team: " + player.getDisplayName());
             });
-            redTeam.getTeamPlayers().forEach(player -> {
+            this.getTeam(TeamType.RED).getTeamPlayers().forEach(player -> {
                 System.out.println("red team" + player.getDisplayName());
             });
         }
     }
 
     private void broadcast(String msg) {
-        Utils.sendMessageToPlayers(redTeam.getTeamPlayers(), msg);
-        Utils.sendMessageToPlayers(greenTeam.getTeamPlayers(), msg);
+        Utils.sendMessageToPlayers(this.getTeam(TeamType.RED).getTeamPlayers(), msg);
+        Utils.sendMessageToPlayers(this.getTeam(TeamType.GREEN).getTeamPlayers(), msg);
+    }
+    private Team getTeam(TeamType teamType){
+        return teams.get(teamType);
     }
 
     public GameState getGameState() {
@@ -169,7 +153,7 @@ public class Arena {
     }
 
     public int getPlayerCount() {
-        return playerCount;
+        return players.size();
     }
 
     public void removePlayer(Player p) {
@@ -200,7 +184,7 @@ public class Arena {
                         event.setCancelled(true);
                     }
                 }
-                if(((Player) entity).getHealth() <= event.getFinalDamage()){
+                if (((Player) entity).getHealth() <= event.getFinalDamage()) {
                     event.setCancelled(true);
                     Player p = (Player) entity;
                     Arena arena = Arena.getPlayerArena(p);
@@ -258,10 +242,6 @@ public class Arena {
     }
 
     private Team getVersusTeam(Team team) {
-        if (team.getType() == TeamType.RED) {
-            return greenTeam;
-        } else {
-            return redTeam;
-        }
+        return team.getType() == TeamType.RED ? teams.get(TeamType.GREEN) : teams.get(TeamType.RED);
     }
 }

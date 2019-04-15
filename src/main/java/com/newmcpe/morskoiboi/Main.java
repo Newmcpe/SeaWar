@@ -2,7 +2,6 @@ package com.newmcpe.morskoiboi;
 
 import com.newmcpe.morskoiboi.listeners.EventListener;
 import com.newmcpe.morskoiboi.objects.Arena;
-import com.newmcpe.morskoiboi.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,7 +24,6 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        this.getDataFolder().mkdir();
         this.getServer().getPluginManager().registerEvents(new EventListener(), this);
 
         addArenas();
@@ -38,9 +36,12 @@ public class Main extends JavaPlugin {
 
         arenas.forEach(arena -> {
             World world = Bukkit.getWorld(arena.getName());
-            if(world != null) {
-                System.out.println("отключаю автосейв в " +world.getName());
+            if (world != null) {
+                System.out.println("отключаю автосейв в " + world.getName());
                 world.setAutoSave(false);
+            } else {
+                System.out.println("удаляю арену " + arena.getName() + ", т.к ее мира не существует");
+                arenas.removeIf(arena1 -> arena1.getName().equalsIgnoreCase(arena.getName()));
             }
         });
     }
