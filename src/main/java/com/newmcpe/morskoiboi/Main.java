@@ -3,13 +3,11 @@ package com.newmcpe.morskoiboi;
 import com.newmcpe.morskoiboi.listeners.EventListener;
 import com.newmcpe.morskoiboi.objects.Arena;
 import com.newmcpe.morskoiboi.utils.Utils;
+import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
-
-/**
- * Created by Newmcpe on 16.08.2017.
- */
 
 public class Main extends JavaPlugin {
 
@@ -36,6 +34,13 @@ public class Main extends JavaPlugin {
     private void addArenas() {
         arenas = new ArrayList<>();
         arenas.add(new Arena("mb1"));
-        arenas.add(new Arena("mb2"));
+        arenas.add(new Arena("mbw"));
+
+        arenas.forEach(arena -> {
+            World world = Bukkit.getWorld(arena.getName());
+            if(world != null) {
+                world.setAutoSave(false);
+            }
+        });
     }
 }

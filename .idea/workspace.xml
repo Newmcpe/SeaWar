@@ -9,7 +9,7 @@
     <list default="true" id="cfc19835-b7f1-4ac5-a41d-1bace979dedc" name="Default" comment="Забыл добавить в git">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MorskoiBoi_jar/MorskoiBoi.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MorskoiBoi_jar/MorskoiBoi.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+            <state relative-caret-position="434">
+              <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
-              <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+            <state relative-caret-position="250">
+              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-256">
-              <caret line="211" column="56" lean-forward="true" selection-start-line="211" selection-start-column="56" selection-end-line="211" selection-end-column="56" />
+            <state relative-caret-position="-441">
+              <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5169#5170#0" expanded="true" />
@@ -123,10 +123,10 @@
         <option value="$PROJECT_DIR$/src/main/java/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/enums/GameState.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Team.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" />
       </list>
     </option>
   </component>
@@ -230,7 +230,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="seawar" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555309459302" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555310098757" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Paper-1.12.2-b1612.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -307,7 +307,7 @@
       <updated>1502889103620</updated>
       <workItem from="1502889110023" duration="2000" />
       <workItem from="1555231669829" duration="21607000" />
-      <workItem from="1555305907014" duration="3443000" />
+      <workItem from="1555305907014" duration="4354000" />
     </task>
     <task id="LOCAL-00001" summary="фулл рекодинг моей старой миниигры">
       <created>1555306362952</created>
@@ -323,11 +323,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555306550774</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Забыл добавить в git">
+      <created>1555309475384</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555309475384</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25052000" />
+    <option name="totallyTimeSpent" value="25963000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -432,16 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1357">
@@ -487,24 +484,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-441">
+          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5203#5204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+        <state relative-caret-position="250">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-256">
-          <caret line="211" column="56" lean-forward="true" selection-start-line="211" selection-start-column="56" selection-end-line="211" selection-end-column="56" />
+        <state relative-caret-position="434">
+          <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5169#5170#0" expanded="true" />
-            <element signature="e#5203#5204#0" expanded="true" />
           </folding>
         </state>
       </provider>
