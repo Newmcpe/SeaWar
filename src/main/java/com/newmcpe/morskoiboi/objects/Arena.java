@@ -243,6 +243,7 @@ public class Arena {
                 arena.removePlayer(p);
                 broadcast(p.getDisplayName() + " покинул игру :(");
                 p.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
+                p.getInventory().clear();
                 if (team.getTeamPlayers().size() == 0) {
                     Team vTeam = getVersusTeam(team);
                     vTeam.getTeamPlayers().forEach(player -> {
