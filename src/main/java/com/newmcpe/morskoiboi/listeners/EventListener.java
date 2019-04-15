@@ -28,11 +28,15 @@ public class EventListener implements Listener {
                 if (clickedBlock == Material.SIGN || clickedBlock == Material.SIGN_POST || clickedBlock == Material.WALL_SIGN) {
                     Sign a = (Sign) event.getClickedBlock().getState();
                     Main.arenas.forEach(arena -> {
-                        if (a.getLine(0).equalsIgnoreCase(arena.getName())) {
-                            if (a.getLine(1).equalsIgnoreCase("1"))
-                                arena.joinPlayer(player, TeamType.RED);
-                            if (a.getLine(1).equalsIgnoreCase("2"))
-                                arena.joinPlayer(player, TeamType.GREEN);
+                        if (arena.getGameState() != GameState.RUNNING) {
+                            if (a.getLine(0).equalsIgnoreCase(arena.getName())) {
+                                if (a.getLine(1).equalsIgnoreCase("1"))
+                                    arena.joinPlayer(player, TeamType.RED);
+                                if (a.getLine(1).equalsIgnoreCase("2"))
+                                    arena.joinPlayer(player, TeamType.GREEN);
+                            }
+                        } else {
+                            player.sendMessage("Дождитесь окончания игры...");
                         }
                     });
                 }
@@ -46,7 +50,7 @@ public class EventListener implements Listener {
                         if (event.getItem().getType() == Material.TNT) {
                             player.getInventory().removeItem(new ItemStack(Material.TNT, 1));
                             TNTPrimed tnt = player.getWorld().spawn(player.getLocation(), TNTPrimed.class);
-                            tnt.setVelocity(player.getLocation().getDirection().normalize().multiply(2));
+                            tnt.setVelocity(player.getLocation().getDirection().normalize().multiply(3));
                         }
                     }
                 }
