@@ -77,7 +77,7 @@ public class Arena {
         return null;
     }
 
-    public void stop(){
+    public void stop() {
         setGameState(GameState.WAITING);
 
     }
@@ -131,6 +131,17 @@ public class Arena {
         if (playerCount >= 2 && gameState == GameState.WAITING) {
             this.start();
             broadcast("Стартую арену....");
+
+            //debug
+            players.forEach(player -> {
+                System.out.println("all playerz" + player.getDisplayName());
+            });
+            greenTeam.getTeamPlayers().forEach(player -> {
+                System.out.println("green team: " + player.getDisplayName());
+            });
+            redTeam.getTeamPlayers().forEach(player -> {
+                System.out.println("red team" + player.getDisplayName());
+            });
         }
     }
 
@@ -156,7 +167,7 @@ public class Arena {
     }
 
     public void removePlayer(Player p) {
-        players.removeIf(player -> Objects.equals(player.getName(), p.getName()));
+        System.out.println(players.removeIf(player -> Objects.equals(player.getName(), p.getName())));
     }
 
     public void onDamage(EntityDamageEvent event) {
@@ -176,10 +187,10 @@ public class Arena {
             if (entity instanceof Player && damager instanceof Player) {
                 Player DMGer = (Player) damager;
                 Player ENTity = (Player) entity;
-                if(getPlayerArena(ENTity) != null && getPlayerArena(DMGer) != null){
+                if (getPlayerArena(ENTity) != null && getPlayerArena(DMGer) != null) {
                     Team team = getPlayerTeam(DMGer);
                     Team teamSecond = getPlayerTeam(ENTity);
-                    if(team.getType().equals(teamSecond.getType())){
+                    if (team.getType().equals(teamSecond.getType())) {
                         event.setCancelled(true);
                     }
                 }
@@ -192,34 +203,35 @@ public class Arena {
         Arena arena = Arena.getPlayerArena(p);
         if (arena != null) {
             if (arena.getGameState() == GameState.RUNNING) {
+                event.getDrops().clear();
                 Team team = Arena.getPlayerTeam(p);
                 team.removePlayer(p);
                 arena.removePlayer(p);
                 broadcast(p.getDisplayName() + " покинул игру :(");
                 p.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-                if(team.getTeamPlayers().size() == 0){
+                if (team.getTeamPlayers().size() == 0) {
                     Team vTeam = getVersusTeam(team);
+                    System.out.println("versus=" + vTeam.getType() + "; this=" + team.getType());
                     vTeam.getTeamPlayers().forEach(player -> {
                         player.sendMessage("Ваша команда " + vTeam.getType().name() + " победила!");
                         team.removePlayer(player);
                         arena.removePlayer(player);
                         player.getInventory().clear();
                         player.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-
-                        //отчищаем блять нахуй
-                        players.clear();
-                        redTeam.getTeamPlayers().clear();
-                        greenTeam.getTeamPlayers().clear();
-
-                        //ждем
                         setGameState(GameState.WAITING);
                     });
+                    players.clear();
+                    redTeam.getTeamPlayers().clear();
+                    greenTeam.getTeamPlayers().clear();
+                    playerCount = 0;
                 }
             }
         }
     }
+
     public void onLeave(PlayerQuitEvent event) {
         Player p = event.getPlayer();
+        p.getInventory().clear();
         Arena arena = Arena.getPlayerArena(p);
         if (arena != null) {
             if (arena.getGameState() == GameState.RUNNING) {
@@ -228,27 +240,25 @@ public class Arena {
                 arena.removePlayer(p);
                 broadcast(p.getDisplayName() + " покинул игру :(");
                 p.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-                if(team.getTeamPlayers().size() == 0){
+                if (team.getTeamPlayers().size() == 0) {
                     Team vTeam = getVersusTeam(team);
                     vTeam.getTeamPlayers().forEach(player -> {
                         player.sendMessage("Ваша команда " + vTeam.getType().name() + " победила!");
-                        team.removePlayer(player);
-                        arena.removePlayer(player);
                         player.getInventory().clear();
                         player.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-                        //отчищаем блять нахуй
-                        players.clear();
-                        redTeam.getTeamPlayers().clear();
-                        greenTeam.getTeamPlayers().clear();
-                        //ждем
                         setGameState(GameState.WAITING);
                     });
+                    players.clear();
+                    redTeam.getTeamPlayers().clear();
+                    greenTeam.getTeamPlayers().clear();
+                    playerCount = 0;
                 }
             }
         }
     }
-    private Team getVersusTeam(Team team){
-        if(team.getType() == TeamType.RED){
+
+    private Team getVersusTeam(Team team) {
+        if (team.getType() == TeamType.RED) {
             return greenTeam;
         } else {
             return redTeam;

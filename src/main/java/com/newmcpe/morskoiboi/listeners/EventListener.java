@@ -23,7 +23,6 @@ public class EventListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
         try {
             Player player = event.getPlayer();
-
             if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
                 Material clickedBlock = event.getClickedBlock().getType();
                 if (clickedBlock == Material.SIGN || clickedBlock == Material.SIGN_POST || clickedBlock == Material.WALL_SIGN) {
@@ -41,10 +40,15 @@ public class EventListener implements Listener {
                     event.setCancelled(true);
                 }
             } else if (event.getAction() == Action.RIGHT_CLICK_AIR) {
-                if (event.getItem().getType() == Material.TNT) {
-                    player.getInventory().removeItem(new ItemStack(Material.TNT, 1));
-                    TNTPrimed tnt = player.getWorld().spawn(player.getLocation(), TNTPrimed.class);
-                    tnt.setVelocity(player.getLocation().getDirection().normalize().multiply(2));
+                Arena arena = Arena.getPlayerArena(player);
+                if(arena != null) {
+                    if (arena.getGameState() == GameState.RUNNING) {
+                        if (event.getItem().getType() == Material.TNT) {
+                            player.getInventory().removeItem(new ItemStack(Material.TNT, 1));
+                            TNTPrimed tnt = player.getWorld().spawn(player.getLocation(), TNTPrimed.class);
+                            tnt.setVelocity(player.getLocation().getDirection().normalize().multiply(2));
+                        }
+                    }
                 }
             }
         } catch (Throwable e) {

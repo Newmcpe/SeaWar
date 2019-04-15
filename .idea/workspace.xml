@@ -6,10 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfc19835-b7f1-4ac5-a41d-1bace979dedc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/ItemUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/Main.java" afterDir="false" />
+    <list default="true" id="cfc19835-b7f1-4ac5-a41d-1bace979dedc" name="Default" comment="Забыл добавить в git">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MorskoiBoi_jar/MorskoiBoi.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MorskoiBoi_jar/MorskoiBoi.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,36 +48,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="223" column="28" lean-forward="true" selection-start-line="223" selection-start-column="28" selection-end-line="223" selection-end-column="28" />
+            <state relative-caret-position="-256">
+              <caret line="211" column="56" lean-forward="true" selection-start-line="211" selection-start-column="56" selection-end-line="211" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5169#5170#0" expanded="true" />
                 <element signature="e#5203#5204#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/utils/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1357">
-              <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/schedule/Schedule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4002">
-              <caret line="191" column="15" selection-start-line="191" selection-start-column="13" selection-end-line="191" selection-end-column="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -233,6 +209,13 @@
               <item name="morskoiboi" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SeaWar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeaWar" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -247,7 +230,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="seawar" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555306506403" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555309459302" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Paper-1.12.2-b1612.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -324,7 +307,7 @@
       <updated>1502889103620</updated>
       <workItem from="1502889110023" duration="2000" />
       <workItem from="1555231669829" duration="21607000" />
-      <workItem from="1555305907014" duration="569000" />
+      <workItem from="1555305907014" duration="3443000" />
     </task>
     <task id="LOCAL-00001" summary="фулл рекодинг моей старой миниигры">
       <created>1555306362952</created>
@@ -333,16 +316,24 @@
       <option name="project" value="LOCAL" />
       <updated>1555306362952</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Забыл добавить в git">
+      <created>1555306550774</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555306550774</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22178000" />
+    <option name="totallyTimeSpent" value="25052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Nl-Palette" order="3" />
@@ -414,7 +405,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="фулл рекодинг моей старой миниигры" />
-    <option name="LAST_COMMIT_MESSAGE" value="фулл рекодинг моей старой миниигры" />
+    <MESSAGE value="Забыл добавить в git" />
+    <option name="LAST_COMMIT_MESSAGE" value="Забыл добавить в git" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/newmcpe/morskoiboi/EventListener.java" />
@@ -507,8 +499,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/newmcpe/morskoiboi/objects/Arena.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="223" column="28" lean-forward="true" selection-start-line="223" selection-start-column="28" selection-end-line="223" selection-end-column="28" />
+        <state relative-caret-position="-256">
+          <caret line="211" column="56" lean-forward="true" selection-start-line="211" selection-start-column="56" selection-end-line="211" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5169#5170#0" expanded="true" />
