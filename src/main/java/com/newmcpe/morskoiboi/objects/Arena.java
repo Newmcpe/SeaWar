@@ -173,13 +173,14 @@ public class Arena {
             }
         }
         if (event instanceof EntityDamageByEntityEvent) {
-            Entity damager = ((EntityDamageByEntityEvent) event).getDamager();
-            if (entity instanceof Player && damager instanceof Player) {
-                Player DMGer = (Player) damager;
-                Player ENTity = (Player) entity;
-                if (getPlayerArena(ENTity) != null && getPlayerArena(DMGer) != null) {
-                    Team team = getPlayerTeam(DMGer);
-                    Team teamSecond = getPlayerTeam(ENTity);
+            EntityDamageByEntityEvent damageByEntityEvent = (EntityDamageByEntityEvent) event;
+            Entity damagerEntity = damageByEntityEvent.getDamager();
+            if (entity instanceof Player && damagerEntity instanceof Player) {
+                Player damager = (Player) damagerEntity;
+                Player victim = (Player) entity;
+                if (getPlayerArena(victim) != null && getPlayerArena(damager) != null) {
+                    Team team = getPlayerTeam(damager);
+                    Team teamSecond = getPlayerTeam(victim);
                     if (team.getType().equals(teamSecond.getType())) {
                         event.setCancelled(true);
                     }
